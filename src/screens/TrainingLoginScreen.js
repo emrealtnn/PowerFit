@@ -1,14 +1,12 @@
 import * as React from "react";
-import { SafeAreaView, Button, View } from "react-native";
+import {SafeAreaView, View, TouchableOpacity, Text} from "react-native";
 import { useEffect, useState } from "react";
-import { getAuth } from "firebase/auth";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 import { firebaseConfig } from "../../firebase-config";
 
 export default function TrainingLoginScreen({ navigation }) {
   const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
   const db = getFirestore(app);
 
   const [trainings, setTrainings] = useState([]);
@@ -25,17 +23,16 @@ export default function TrainingLoginScreen({ navigation }) {
   }, []);
 
   return (
-    <View style={{ flex: 1 }}>
-      <SafeAreaView>
+
+      <SafeAreaView style={{ flex: 1, backgroundColor:'#000' }}>
+        <View style={{marginTop:70}}>
         {trainings.map((training) => (
-          <Button
-            title={training}
-            onPress={() =>
-              navigation.navigate("Trainingtype", { training: training })
-            }
-          />
+            <TouchableOpacity style={{backgroundColor:'#181818',padding:20,borderRadius:10,marginBottom:10,width:'90%',alignSelf:'center'}}
+             onPress={() => navigation.navigate("TrainingType", { training: training })}>
+              <Text style={{color:'#fff',fontSize:24}}>{training}</Text></TouchableOpacity>
         ))}
+        </View>
       </SafeAreaView>
-    </View>
+
   );
 }

@@ -22,6 +22,9 @@ import SettingsScreen  from "./src/screens/SettingsScreen";
 import TrainingTypeScreen from "./src/screens/TrainingTypeScreen";
 import VkiCalScreen from "./src/screens/VkiCalScreen";
 import TrainingScreen from "./src/screens/TrainingScreen";
+import NutritionTypeScreen from "./src/screens/NutritionLoginScreen";
+import NutritionScreen from "./src/screens/NutritionLoginScreen";
+
 
 const { Screen, Navigator } = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -39,7 +42,7 @@ function Home() {
   return (
     <Navigator screenOptions={screenOptions}>
       <Screen
-        name="Training"
+        name="Traininglogin"
         component={TrainingLoginScreen}
         options={{headerShown: true,headerTransparent:true,headerTintColor:"white",tabBarVisible:false,headerTitle:"Antrenmanlar",headerTitleStyle:{fontSize:20,fontWeight:"bold"},
           tabBarIcon: () => (
@@ -48,9 +51,9 @@ function Home() {
         }}
       />
       <Screen
-        name="Nutrition"
+        name="NutritionLogin"
         component={NutritionLoginScreen}
-        options={{
+        options={{headerShown: true,headerTransparent:true,headerTintColor:"white",tabBarVisible:false,headerTitle:"Beslenme Programları",headerTitleStyle:{fontSize:20,fontWeight:"bold"},
           tabBarIcon: () => (
             <MaterialCommunityIcons name="nutrition" size={32} color="white" />
           ),
@@ -150,14 +153,24 @@ export default function App() {
               component={VkiCalScreen}
           />
           <Stack.Screen
-              options={{ headerTransparent: true, headerBackTitleVisible:false,headerTintColor: "white" ,headerTitle:"Vücut Kitle İndeksi Hesaplama"}}
-              name="Trainingtype"
+              options={{ headerTransparent: true, headerBackTitleVisible:false,headerTintColor: "white" ,headerTitle:"Antrenman Türleri"}}
+              name="TrainingType"
               component={TrainingTypeScreen}
           />
           <Stack.Screen
-              options={{ headerTransparent: true, headerBackTitleVisible:false,headerTintColor: "white" ,headerTitle:"Vücut Kitle İndeksi Hesaplama"}}
+              options={{ headerTransparent: true, headerBackTitleVisible:false,headerTintColor: "white" ,headerTitle:"Antrenman"}}
               name="Training"
               component={TrainingScreen}
+          />
+          <Stack.Screen
+              options={{ headerTransparent: true, headerBackTitleVisible:false,headerTintColor: "white" ,headerTitle:"Beslenme Türleri"}}
+              name="NutritionType"
+              component={NutritionTypeScreen}
+          />
+          <Stack.Screen
+              options={{ headerTransparent: true, headerBackTitleVisible:false,headerTintColor: "white" ,headerTitle:"Beslenme Programı"}}
+              name="Nutrition"
+              component={NutritionScreen}
           />
       </Stack.Navigator>
     </NavigationContainer>

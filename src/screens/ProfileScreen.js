@@ -27,17 +27,6 @@ export default function ProfileScreen({navigation}) {
     
   }, []);
 
-  signOutUser = async () => {
-    try {
-      await firebaseConfig.auth().signOut();
-      navigation.navigate("Login");
-      console.log("User signed out!");
-
-    }
-    catch(error) {
-        console.log(error);;
-      };
-  };
   
   return (
     <View style={{ flex: 1 }}>  
@@ -92,7 +81,7 @@ export default function ProfileScreen({navigation}) {
               </View>
             </View>
             <View>
-              <TouchableOpacity onPress={() => {signOutUser()}}>
+              <TouchableOpacity onPress={() => navigation.navigate("Startpage")}>
               <Text style={{color:'red',fontSize:24,textAlign:'center',marginTop:25,fontWeight:'600'}}> Çıkış Yap</Text>
               </TouchableOpacity>
             </View>

@@ -12,7 +12,7 @@ export default class VkiCalScreen extends React.Component {
     };
 
     handleCalculate = () => {
-        let imc = (this.state.mass * 703) / this.state.height ** 2;
+        let imc = this.state.mass*10000 / this.state.height ** 2;
         this.setState({
             resultNumber: imc.toFixed(2)
         });
@@ -22,7 +22,7 @@ export default class VkiCalScreen extends React.Component {
         } else if (imc > 18.5 && imc < 25) {
             this.setState({ resultText: "Normal Kilo" });
         } else if (imc >= 25 && imc < 30) {
-            this.setState({ resultText: "kilolu" });
+            this.setState({ resultText: "Kilolu" });
         } else {
             this.setState({ resultText: "Obez" });
         }
@@ -37,19 +37,17 @@ export default class VkiCalScreen extends React.Component {
                         <Text style={{color:'#F4311E',fontSize:20,paddingLeft:24,paddingBottom:10}}>Kilo Giriniz</Text>
                         <TextInput
                             placeholder="Örnek: 70"
-                            keyboardType="numeric"
                             style={styles.input}
-                            onChangeText={height => {
-                                this.setState({ height });
+                            onChangeText={mass => {
+                                this.setState({ mass });
                             }}
                         />
                         <Text style={{color:'#F4311E',fontSize:20,paddingLeft:24,paddingBottom:10}}>Boy Giriniz</Text>
                         <TextInput
                             placeholder="Örnek: 180"
-                            keyboardType="numeric"
                             style={styles.input}
-                            onChangeText={mass => {
-                                this.setState({ mass });
+                            onChangeText={height => {
+                                this.setState({ height });
                             }}
                         />
                     </View>
@@ -75,7 +73,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#000",
     },
     intro: {
-        marginTop: 150,
+        marginTop: 90,
     },
     input: {
         backgroundColor:"#181818",
