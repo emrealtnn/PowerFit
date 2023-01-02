@@ -1,8 +1,5 @@
 import * as React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
-import { getFirestore, doc, setDoc } from "firebase/firestore";
-
 
 export default function TrainingfrequencyScreen({ navigation }) {
 

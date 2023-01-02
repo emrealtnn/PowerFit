@@ -1,11 +1,5 @@
 import * as React from "react";
-import {
-  Text,
-  StyleSheet,
-  ImageBackground,
-  View,
-  TouchableOpacity,
-} from "react-native";
+import {Text, StyleSheet, ImageBackground, View, TouchableOpacity,} from "react-native";
 
 export default function StartpageScreen({ navigation }) {
   return (

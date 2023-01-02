@@ -73,7 +73,7 @@ export default function ProfileScreen({navigation}) {
             </View>
             <View >
               <View style={{paddingVertical:20,paddingLeft:20}}>
-              <TouchableOpacity onPress={() => navigation.navigate("Settings")}>
+              <TouchableOpacity onPress={() => navigation.navigate("Help")}>
               <Text style={{color:'#fff',fontSize:24}}>Yardım</Text>
               </TouchableOpacity>
               </View>

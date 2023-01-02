@@ -24,7 +24,7 @@ import VkiCalScreen from "./src/screens/VkiCalScreen";
 import TrainingScreen from "./src/screens/TrainingScreen";
 import NutritionTypeScreen from "./src/screens/NutritionTypeScreen";
 import NutritionScreen from "./src/screens/NutritionScreen";
-
+import HelpScreen from "./src/screens/HelpScreen";
 
 const { Screen, Navigator } = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -143,7 +143,7 @@ export default function App() {
           component={UserinfoScreen}
         />
         <Stack.Screen
-          options={{ headerShown: false,}}
+          options={{ headerTransparent: true, headerBackTitleVisible:false,headerTintColor: "white" ,headerTitle:"Ayarlar"}}
           name="Settings"
           component={SettingsScreen}
         />
@@ -163,7 +163,7 @@ export default function App() {
               component={TrainingScreen}
           />
           <Stack.Screen
-              options={{ headerTransparent: true, headerBackTitleVisible:false,headerTintColor: "white" ,headerTitle:"Beslenme Türlerim"}}
+              options={{ headerTransparent: true, headerBackTitleVisible:false,headerTintColor: "white" ,headerTitle:"Beslenme Türleri"}}
               name="NutritionType"
               component={NutritionTypeScreen}
           />
@@ -171,6 +171,11 @@ export default function App() {
               options={{ headerTransparent: true, headerBackTitleVisible:false,headerTintColor: "white" ,headerTitle:"Beslenme Programı"}}
               name="Nutrition"
               component={NutritionScreen}
+          />
+          <Stack.Screen
+              options={{ headerTransparent: true, headerBackTitleVisible:false,headerTintColor: "white" ,headerTitle:"Yardım Alın"}}
+              name="Help"
+              component={HelpScreen}
           />
       </Stack.Navigator>
     </NavigationContainer>

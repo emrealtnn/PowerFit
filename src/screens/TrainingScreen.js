@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Text, StyleSheet, TouchableOpacity, SafeAreaView, ScrollView} from "react-native";
+import {View, Text, StyleSheet, ScrollView} from "react-native";
 import { useEffect, useState } from "react";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 import { initializeApp } from "firebase/app";

@@ -6,10 +6,8 @@ import { initializeApp } from "firebase/app";
 import { firebaseConfig } from "../../firebase-config";
 
    export default function NutritionTypeScreen({ route, navigation }) {
-       console.log("selam")
     const { nutrition } = route.params;
-       console.log(nutrition);
-       console.log("test");
+
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
@@ -32,7 +30,7 @@ import { firebaseConfig } from "../../firebase-config";
         <View style={{ flex: 1 ,backgroundColor:'#000'}}>
             <SafeAreaView>
                 <View style={{marginTop:50,alignItems:'center'}}>
-                    {nutritionType.map((nutritionType) => (
+                    {nutritionType.reverse().map((nutritionType) => (
                         <TouchableOpacity style={{backgroundColor:'#181818',padding:20,borderRadius:10,marginBottom:10,width:'90%'}}
                                           onPress={() => navigation.navigate("Nutrition", {nutritionType:nutritionType , nutrition: nutrition })}>
                             <Text style={{color:'#fff',fontSize:24}}>{nutritionType}</Text></TouchableOpacity>
