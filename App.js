@@ -25,6 +25,7 @@ import TrainingScreen from "./src/screens/TrainingScreen";
 import NutritionTypeScreen from "./src/screens/NutritionTypeScreen";
 import NutritionScreen from "./src/screens/NutritionScreen";
 import HelpScreen from "./src/screens/HelpScreen";
+import PremiumScreen from "./src/screens/PremiumScreen";
 
 const { Screen, Navigator } = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -176,6 +177,11 @@ export default function App() {
               options={{ headerTransparent: true, headerBackTitleVisible:false,headerTintColor: "white" ,headerTitle:"Yardım Alın"}}
               name="Help"
               component={HelpScreen}
+          />
+          <Stack.Screen
+              options={{ headerTransparent: true, headerBackTitleVisible:false,headerTintColor: "white" ,headerTitle:"Premium Üyelik"}}
+              name="Premium"
+              component={PremiumScreen}
           />
       </Stack.Navigator>
     </NavigationContainer>

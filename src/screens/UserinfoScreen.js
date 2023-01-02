@@ -5,6 +5,7 @@ import { getAuth } from "firebase/auth";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 import { firebaseConfig } from "../../firebase-config";
+import { FontAwesome5 } from '@expo/vector-icons';
 
 export default function UserinfoScreen({navigation}) {
     const app = initializeApp(firebaseConfig);
@@ -55,7 +56,7 @@ export default function UserinfoScreen({navigation}) {
                 </TouchableOpacity>
             </View>
             <View style ={style.textView}>
-                <TouchableOpacity >
+                <TouchableOpacity onPress={() => navigation.navigate('Registerinfo')} >
                     <View style={{flexDirection:'row'}}>
                         <Text style={style.text}>Boy </Text>
                         <Text style={style.text2}>{user.height} ></Text>
@@ -63,10 +64,19 @@ export default function UserinfoScreen({navigation}) {
                 </TouchableOpacity>
             </View>
             <View style ={style.textView}>
-                <TouchableOpacity >
+                <TouchableOpacity onPress={() => navigation.navigate('Registerinfo')} >
                     <View style={{flexDirection:'row'}}>
                         <Text style={style.text}>Kilo </Text>
                         <Text style={style.text2}>{user.weight} ></Text>
+                    </View>
+                </TouchableOpacity>
+            </View>
+            <View style ={style.textView}>
+                <TouchableOpacity >
+                    <View style={{flexDirection:'row'}}>
+                        <Text style={style.text}>
+                            <FontAwesome5 name="crown" size={24} color="gold" />  Premium Üyelik </Text>
+                        <Text style={style.text2}>{user.premium} ></Text>
                     </View>
                 </TouchableOpacity>
             </View>
@@ -89,7 +99,7 @@ const style = StyleSheet.create({
     text2: {
         color:'#CDCFD0',
         padding:20,
-        fontSize:24,
+        fontSize:20,
         position:'absolute',
         right:0
     }

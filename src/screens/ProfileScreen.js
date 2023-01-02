@@ -64,7 +64,7 @@ export default function ProfileScreen({navigation}) {
             </View>
             <View >
               <View style={{paddingVertical:20,paddingLeft:20}}>
-              <TouchableOpacity onPress={() => navigation.navigate("Settings")}>
+              <TouchableOpacity onPress={() => navigation.navigate("Premium")}>
               <Text style={{color:'#fff',fontSize:24}}>Premium satın al</Text>
               </TouchableOpacity>
               </View>
