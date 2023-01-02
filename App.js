@@ -22,8 +22,8 @@ import SettingsScreen  from "./src/screens/SettingsScreen";
 import TrainingTypeScreen from "./src/screens/TrainingTypeScreen";
 import VkiCalScreen from "./src/screens/VkiCalScreen";
 import TrainingScreen from "./src/screens/TrainingScreen";
-import NutritionTypeScreen from "./src/screens/NutritionLoginScreen";
-import NutritionScreen from "./src/screens/NutritionLoginScreen";
+import NutritionTypeScreen from "./src/screens/NutritionTypeScreen";
+import NutritionScreen from "./src/screens/NutritionScreen";
 
 
 const { Screen, Navigator } = createBottomTabNavigator();
@@ -163,7 +163,7 @@ export default function App() {
               component={TrainingScreen}
           />
           <Stack.Screen
-              options={{ headerTransparent: true, headerBackTitleVisible:false,headerTintColor: "white" ,headerTitle:"Beslenme Türleri"}}
+              options={{ headerTransparent: true, headerBackTitleVisible:false,headerTintColor: "white" ,headerTitle:"Beslenme Türlerim"}}
               name="NutritionType"
               component={NutritionTypeScreen}
           />

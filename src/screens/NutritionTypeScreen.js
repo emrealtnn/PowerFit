@@ -5,8 +5,11 @@ import { getFirestore, doc, getDoc } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 import { firebaseConfig } from "../../firebase-config";
 
-export default function TrainingTypeScreen({ route, navigation }) {
+   export default function NutritionTypeScreen({ route, navigation }) {
+       console.log("selam")
     const { nutrition } = route.params;
+       console.log(nutrition);
+       console.log("test");
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 

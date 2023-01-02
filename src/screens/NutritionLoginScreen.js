@@ -28,7 +28,7 @@ export default function NutritionLoginScreen({ navigation }) {
             <View style={{marginTop:70}}>
                 {nutritions.map((nutrition) => (
                     <TouchableOpacity style={{backgroundColor:'#181818',padding:20,borderRadius:10,marginBottom:10,width:'90%',alignSelf:'center'}}
-                                      onPress={() => navigation.navigate("NutritionType", { nutrition: nutrition })}>
+                                      onPress={() => navigation.navigate("NutritionType", { nutrition: nutrition.toString() })}>
                         <Text style={{color:'#fff',fontSize:24}}>{nutrition}</Text></TouchableOpacity>
                 ))}
             </View>

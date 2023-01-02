@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Text, StyleSheet, TouchableOpacity, SafeAreaView, ScrollView} from "react-native";
+import {View, Text, StyleSheet,ScrollView} from "react-native";
 import { useEffect, useState } from "react";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
@@ -31,7 +31,7 @@ export default function NutritionScreen ({ route, navigation }) {
         <View style={{ flex: 1 ,backgroundColor:'#000'}}>
             <ScrollView style={{marginTop:100}}>
                 {Object.entries(nutritionTypes).map(([key, value]) => {
-                    if (key === nutritionType && value[6] === undefined) {
+                    if (key === nutritionType && value[9] === undefined) {
                         return (
                             <View >
                                 <Text style={styles.text}>{value[0]}</Text>
@@ -40,14 +40,15 @@ export default function NutritionScreen ({ route, navigation }) {
                                 <Text style={styles.text}>{value[3]}</Text>
                                 <Text style={styles.text}>{value[4]}</Text>
                                 <Text style={styles.text}>{value[5]}</Text>
-                                <Text style={styles.text2}><Text style={{color:'#f4311e'}}>Not: </Text>Tüm hareketler 4 set ve maksimum tekrardır.</Text>
-                                <Text style={styles.text2}><Text style={{color:'#f4311e'}}>Not: </Text>Her set arasında 40-60 saniye dinlenme süresi veriniz.</Text>
+                                <Text style={styles.text}>{value[6]}</Text>
+                                <Text style={styles.text}>{value[7]}</Text>
+                                <Text style={styles.text}>{value[8]}</Text>
 
                             </View>
                         );
 
                     }
-                    else if (key === nutritionType && value[9] !== undefined) {
+                    else if (key === nutritionType && value[10] !== undefined) {
                         return (
                             <View>
                                 <Text style={styles.text}>{value[0]}</Text>
@@ -60,9 +61,8 @@ export default function NutritionScreen ({ route, navigation }) {
                                 <Text style={styles.text}>{value[7]}</Text>
                                 <Text style={styles.text}>{value[8]}</Text>
                                 <Text style={styles.text}>{value[9]}</Text>
-                                <Text style={styles.text2}><Text style={{color:'#f4311e'}}>Not: </Text>Tüm hareketler 4 set ve maksimum tekrardır.</Text>
-                                <Text style={styles.text2}><Text style={{color:'#f4311e'}}>Not: </Text>Her set arasında 40-60 saniye dinlenme süresi veriniz.</Text>
-
+                                <Text style={styles.text}>{value[10]}</Text>
+                                <Text style={styles.text}>{value[11]}</Text>
                             </View>
                         );
 
